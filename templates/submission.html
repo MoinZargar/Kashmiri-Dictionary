@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submitted</title>
+    <link rel= "stylesheet" type= "text/css" href="{{ url_for('static', filename='submission.css')}}">
+
+</head>
+<body>
+    <!-- submission message -->
+ <div  class="result_box">
+    <div class="icon">
+        <i class="fas fa-crown"></i>
+    </div>
+    <div style="line-height: 1.5;" class="complete_text">Thank you for submitting the word. It will be added after admin approval</div>
+    <div class="score_text">
+      
+    </div>
+    <div class="buttons">
+        <a href="{{ url_for('home') }}" class="button restart">Home</a>
+        <a href="{{ url_for('dashboard') }}" class="button quit">Dashboard</a>
+    </div>
+  </div>
+</body>
+</html>

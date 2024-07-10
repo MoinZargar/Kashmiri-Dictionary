@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic&display=swap');
+body{
+  background-color:#eee;
+  
+  font-family: 'Noto Naskh Arabic', serif;
+}
+/* Define input styles */
+#heading{
+  color: black;
+}
+input[type="text"] {
+    width: 100%; /* full width for responsive design */
+    padding: 12px 20px;
+    margin:0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 23px; /* increased border radius */
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    transition: all 0.3s ease-in-out; /* added transition */
+    background-color: #f9f9f9; /* added background color */
+  }
+  
+  /* Define input focus styles */
+  input[type="text"]:focus {
+    border: 2px solid #555;
+    box-shadow: 0 0 10px #555; /* added box-shadow */
+    outline: none;
+  }
+  .input-group {
+    flex-wrap: nowrap !important;
+  }
+  #search-icon {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+  #search-input, #search-icon {
+    height: 50px; /* set the same height for both elements */
+    line-height: 37px; /* align the elements vertically */
+    box-sizing: border-box;
+}
+
+ 
+  
+   #suggestions {
+    position: absolute;
+    width: 100%;
+    max-height: 200px; /* This will limit the height of the suggestions list */
+   overflow-y: auto; /*This will add scrollbar when the suggestions list exceeds the max-height */
+    
+    border-top: none;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    z-index: 1;
+    top:100%;
+    left: 0;
+    list-style: none; /* Removing bullet points */
+    margin: 0; /* Removing margin*/
+    padding:0;
+   }
+ 
+  #suggestions li {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  #suggestions li:hover {
+    background-color: #f5f5f5;
+  }
+
+  
+  /* search icon */
+  .search-icon {
+    position: absolute;
+    top: 50%;
+    right: 16px;  
+    transform: translateY(-50%);
+  
+    background-color: #f2f2f2;
+   
+    box-shadow: 2px 2px 4px #ccc;
+    border: none;
+    cursor: pointer; 
+  }
+  .search-icon i {
+    color: #ff0000; 
+    transition: color 0.2s ease-in-out;
+   
+
+  }
+  .search-icon:hover i {
+    color: #0000ff; /* example hover color */
+  }
+  /* search input */
+  #search-input {
+    padding-right: 40px; /* make room for the search icon */
+  }
+.search-container {
+  transform: translateY(-50px);
+}
+
+
+/* result display card */
+#card {
+  position:fixed;
+  display: block; /* set the initial display property to block */
+  visibility: hidden; /* set the initial visibility property to hidden */
+  background-color: #F5F5F5;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px #CCC;
+
+  padding: 5%;
+  text-align: center;
+   animation: card-animation 0.5s ease-in-out; 
+   max-height: 300px;
+   max-width: 100%;
+   overflow: hidden;
+   font-family: 'Noto Naskh Arabic', serif;
+} 
+
+@keyframes card-animation {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+
+.card-header {
+  background-image: linear-gradient(to right, #7f00ff, #e100ff);
+  background-size: cover;
+  color:white;
+  padding: 10px;
+  text-transform: uppercase;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#card:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 20px #333;
+  transition: all 0.3s ease-in-out;
+}
+
+
+.card-body {
+  padding: 20px;
+  font-family: 'Noto Naskh Arabic', serif;
+
+}
+
+.card-header h3 {
+  color: white;
+  font-size: 1.6em;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.card-body h4 {
+  font-size: 1.7em;
+  font-weight: bold;
+  margin: 4% 0;
+  font-family: 'Noto Naskh Arabic', serif;
+}
+.img-fluid{
+  padding-left: 18%;
+}
+.card-title, .card-subtitle, .card-text {
+  font-size:1.7em;
+  font-weight:700;
+  padding:10px;
+  font-family: 'Noto Naskh Arabic', serif;
+}
+@media only screen and (max-width: 600px) {
+  .card-title, .card-subtitle, .card-text {
+      font-size:1.2em;
+      padding:5px;
+  }
+}
+
+@media (max-width: 768px) {
+  #card{
+    position:static;
+  }
+  .card-header h3 {
+    font-size: 1.5em;
+  }
+  .card-body h4 {
+    font-size: 1.2em;
+  }
+}
+
+  
+  @media (max-width: 480px) {
+    #card{
+      position:static;
+    }
+    input[type="text"] {
+        font-size: 12px; /* decreased font-size for smaller screens */
+    }
+    label {
+        font-size: 15px; /* decreased font-size for smaller screens */
+    }
+    #suggestions li {
+      font-size: 14px;
+    }
+    .search-container {
+        flex-wrap: wrap;
+      }
+    
+      #search-input {
+        width: 100%;
+      }
+  }
+  
+  @media only screen and (max-width: 600px) {
+    input[type="text"] {
+      width: 90%; /* reduce width for smaller screens */
+      font-size: 14px; /* reduce font size for smaller screens */
+    }
+    .search-icon {
+      top: 40%; /* adjust position for smaller screens */
+      right: 10px; /* adjust position for smaller screens */
+    }
+    .search-icon i {
+      font-size: 18px; /* increase font size for smaller screens */
+    }
+  }
+   

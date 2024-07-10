@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Kashmiri Dictionary: Kashmiri-English Dictionary: Over 5000 Translations for Effective Communication</title>
+  <meta name="keywords" content="Kashmiri dictionary,Kashmiri language,Kashmiri dictionary,English to kashmiri translation,kashmiri to english translation, vocabulary, Kashmiri poetry,kashmir history,kashmiri culture,Habba khatoon, Lal Ded, Sheikh ul Alam, Janbaz Kishtwari, G.N. Doolwal, Mehjoor, Rasul Mir">
+  <meta name="description" content="Welcome to our English to Kashmiri dictionary with over 5000 words and translations, you'll have everything you need to communicate effectively in both languages. Plus, enjoy a selection of beautiful Kashmiri poetry, showcasing the region's vibrant literary tradition. Explore the works of legendary poets like Lal Ded, Sheikh ul Alam, Janbaz Kishtwari, G.N. Doolwal, and Mehjoor Rasul Mir.">
+ 
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  
+ <!-- jquery -->
+ <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link rel= "stylesheet" type= "text/css" href="{{ url_for('static', filename='assets/vendor/aos/aos.css')}}">
+  <link rel= "stylesheet" type= "text/css" href="{{ url_for('static', filename='assets/vendor/bootstrap/css/bootstrap.min.css')}}">
+  <link rel= "stylesheet" type= "text/css" href="{{ url_for('static', filename='assets/vendor/bootstrap-icons/bootstrap-icons.css')}}">
+  <link rel= "stylesheet" type= "text/css" href="{{ url_for('static', filename='assets/vendor/boxicons/css/boxicons.min.css')}}">
+  <link rel= "stylesheet" type= "text/css" href="{{ url_for('static', filename='assets/vendor/glightbox/css/glightbox.min.css')}}">
+  <link rel= "stylesheet" type= "text/css" href="{{ url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.css')}}">
+
+  <!-- Template Main CSS File -->
+  <link rel= "stylesheet" type= "text/css" href="{{ url_for('static', filename='style.css')}}">
+  <link rel= "stylesheet" type= "text/css" href="{{ url_for('static', filename='assets/css/style.css')}}">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <h4> كٲشر ڈکشنری</h4>
+        
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#word">Word</a></li>
+          <li><a class="nav-link scrollto" href="#poetry">Poetry</a></li>
+          <!-- <li><a class="nav-link scrollto" href="#features">Features</a></li>
+          <li><a class="nav-link scrollto" href="#history">History</a></li> -->
+          <li><a class="nav-link scrollto" href="{{url_for('contribute')}}">Contribute</a></li>
+          <!-- <li><a class="nav-link scrollto" href="#about">About</a></li> -->
+          <!-- user dashboard -->
+          {% if logged_in  and not role%}
+          <li><a class="nav-link scrollto" href="{{url_for('dashboard')}}">Dashboard</a></li>
+          {% endif %}
+          <!-- admin dashboard -->
+          {% if role %}
+          <li><a class="nav-link scrollto" href="{{url_for('admin')}}">Admin</a></li>
+          
+          {% endif %}
+          <li><a class="nav-link scrollto" href="#footer">Contact</a></li>
+          {% if logged_in %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="username">{{ name }}</span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{{ url_for('logout') }}">Logout</a>
+            </div>
+          </li>
+          {% else %}
+          <li><a class="nav-link scrollto" href="{{url_for('register')}}">Sign in</a></li>
+          <li><a class="nav-link scrollto" href="{{url_for('login')}}">Login</a></li>
+          {% endif %}
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Heading Section ======= -->
+  <section id="hero">
+
+    <div class="container">
+      <div class="row d-flex align-items-center active">
+      <div class="search-bar col-lg-6 py-lg-0 order-2 order-lg-1" data-aos="fade-right">
+        <div class="search-container">
+          <h1 id="heading">  كٲشر ڈکشنری</h1>
+          <h2>Discover the Beauty of Kashmiri Language with the Most Intuitive English to Kashmiri Dictionary</h2>
+          <form id="search-form">
+              <div class="input-group">
+                  <input type="text" id="search-input" placeholder="Enter an English word" class="form-control-lg form-control rounded-left" autocomplete="off">
+                  <div class="input-group-append">
+                      <button class="btn btn-primary btn-lg  text-white" type="submit" id="search-icon">
+                        <!-- <button class="btn btn-primary btn-lg text-white" type="submit" id="search-icon">Search</button>  -->
+                        <i class="fa fa-search"></i>
+                      </button>
+                  </div>
+              </div>
+              <ul id="suggestions"></ul>
+          </form> 
+        
+      </div>
+  
+          <div id="card">
+            <div class="card-header">
+              <h3 id="english-word"></h3>
+            </div>
+            <div class="card-body">
+              <h4 id="pos"></h4>
+              <h4 id="english-meaning"></h4>
+              <h4 id="kashmiri-meaning"></h4>
+            </div>
+          </div>
+        
+      
+          
+        <!-- <a href="#about" class="btn-get-started scrollto">Get Started</a> -->
+      </div>
+      <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left">
+
+        <img src="{{ url_for('static', filename='images/mobile-hand.jpg') }}" class="img-fluid" alt="">
+      </div>
+      
+    
+      </div>
+      
+   
+   
+    </div>
+    
+    
+   
+  </section><!-- End Hero -->
+  
+  <main id="main">
+
+    <!-- ======= message Section ======= -->
+    <section id="clients" class="clients section-bg">
+      <div class="container">
+
+        <div class="row no-gutters clients-wrap clearfix wow fadeInUp">
+
+          <div class="col-lg-3 col-md-3 col-6">
+            <div class="client-logo">
+                <img src="{{ url_for('static', filename='images/img3.png') }}" class="img-fluid" alt="" data-aos="flip-right">
+              
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-3 col-6">
+            <div class="client-logo">
+              <img src="{{ url_for('static', filename='images/img2.png') }}" class="img-fluid" alt="" data-aos="flip-right" data-aos-delay="100">
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-3 col-6">
+            <div class="client-logo">
+              <img src="{{ url_for('static', filename='images/img1.png') }}" class="img-fluid" alt="" data-aos="flip-right" data-aos-delay="200">
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-3 col-6">
+            <div class="client-logo">
+              <img src="{{ url_for('static', filename='images/img2.png') }}" class="img-fluid" alt="" data-aos="flip-right" data-aos-delay="300">
+            </div>
+          </div>
+
+         
+
+        </div>
+
+      </div>
+    </section>
+    <!-- Word of the day -->
+    <section id="word">
+      <div class="container">
+        <div class="word card mx-auto shadow-lg card text-center">
+          <div class="card-header bg-primary text-white">
+            <h3 class="card-title">Word of the Day</h3>
+          </div>
+          <div class="card-body p-3">
+            <h4 id="word-title" class=" card-title text-primary">{{results[1]}}</h4>
+            <h4 id="word-pos" class="card-subtitle mb-2 text-muted">{{results[2]}}</h4>
+            <h5 id="english" class="p-2 card-text">English :{{results[3]}}</h5>
+            <h5 id="kashmiri-word" class="p-2 card-text ">Kashmiri: {{results[4]}}</h5>
+            <h5 id="english-example" class="p-2 card-text ">Example: {{results[5]}}</h5>
+          </div>
+          <div class="card-footer text-muted">
+           
+          </div>
+        </div>
+      </div>
+      
+      
+    </section>
+    
+    
+    
+    
+   <!-- poetry section -->
+
+    <section id="poetry" class="services section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2 data-aos="fade-in">Poetry Collection</h2>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 d-flex" data-aos="fade-right">
+            <div class="card">
+              <div class="card-img">
+                <img src="{{ url_for('static', filename='images/poetry1.png') }}" alt="...">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><a href="">Kalam-e-Sheikh ul Aalam</a></h5>
+                <p class="card-text">He was and He shalt be
+                  May for Him my dear-self be
+                  Alone, He wilt remove thy fears and doubts
+                  Be perceptible to some extent O,me!</p>
+                
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 d-flex" data-aos="fade-left">
+            <div class="card">
+              <div class="card-img">
+                <img src="{{ url_for('static', filename='images/poetry2.png') }}" alt="...">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><a href="">Kalam-e-Sheikh ul Aalam</a></h5>
+                <p class="card-text">God is but one-with hundred thousand names!
+                  Not a straw grass-even, is inattentive invoking Him.
+                  Deem not thy life more than a jiffy.
+                  See, not even an insect is without sustenance.</p>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-6 d-flex" data-aos="fade-right">
+            <div class="card">
+              <div class="card-img">
+                <img src="{{ url_for('static', filename='images/poetry3.png') }}" alt="...">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><a href="">Kalam-e-Sheikh ul Aalam</a></h5>
+                <p class="card-text">Aye! A lover-true wilt fume in love and amour.
+                  Glittering wilt he be like gold in fusion and suspension.
+                  He who be pierced with darts of love and passion.
+                  Wilt find himself in adobes among visionary destination.</p>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 d-flex" data-aos="fade-left">
+            <div class="card">
+              <div class="card-img">
+                <img src="{{ url_for('static', filename='images/poetry4.png') }}" alt="...">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><a href="">Kalam-e-Sheikh ul Aalam</a></h5>
+                <p class="card-text">Unlawful did i find delicious here.
+                  Thus polluted am i of my filthy appetite.
+                  Vice did i pursued, leaving virtue.
+                  Releive me of my sins O, Gracious Lord !</p>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2 data-aos="fade-in">Features</h2>
+          
+        </div>
+
+        <div class="row content">
+          <div class="col-md-5" data-aos="fade-right">
+            <img src="{{ url_for('static', filename='images/features-1.svg') }}" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 pt-4" data-aos="fade-left">
+            
+            <ul>
+              <li><i class="bi bi-check"></i>Over 5000 Kashmiri words translated to Kashmiri language.</li>
+              <li><i class="bi bi-check"></i>Kashmiri poetry with translations in English.</li>
+              <li><i class="bi bi-check"></i>Word of the day feature with translation and example sentence.</li>
+              <li><i class="bi bi-check"></i>Intuitive and user-friendly search bar for easy word translation.</li>
+              <li><i class="bi bi-check"></i>Convenient browsing options, including browsing by alphabet and advanced search options</li>
+              <li><i class="bi bi-check"></i>Regular updates and improvements to our resources.</li>
+            </ul>
+          </div>
+        </div>
+
+        
+      </div>
+    </section><!-- End Features Section -->
+    
+
+   <!-- ======= History and Culture Section ======= -->
+   <section id="history" class="about section-bg">
+      
+    <div class="row  gy-4">
+      <img style="height:max-content" src="{{ url_for('static', filename='images/history-section.jpg') }}" class="col-xl-5">
+      <div class="col-xl-7">
+        <div class="content d-flex flex-column justify-content-center ps-0 ps-xl-4">
+          <h3 data-aos="fade-in" data-aos-delay="100">History and Culture</h3>
+          <p style=" padding:7%; line-height: 2;" data-aos="fade-in">
+            Kashmiri language belongs to the Indo-Aryan language family and has a rich history and culture.
+
+            The earliest written records of the Kashmiri language date back to the 8th century CE, during the reign of King Lalitaditya. However, it wasn't until the 14th century that Kashmiri literature truly flourished.
+            
+            During the 14th and 15th centuries, the Sufi saints of Kashmir played a significant role in the development of Kashmiri language and literature. Their poetry and writings were instrumental in shaping the language, and their influence can still be seen in Kashmiri culture today.
+            
+            The Kashmiri language has a unique script, known as the Sharada script, which was used to write the language until the 20th century. Today, the language is primarily written in the Perso-Arabic script.
+            
+            Kashmiri literature includes a wide range of genres, including poetry, folktales, and religious texts. Some of the most famous Kashmiri poets include Lal Ded, Habba Khatoon,Mehjoor, Rasul Mir, G.N Doolwal (Janbaz Kishtwari) etc.
+            
+            In addition to literature, Kashmiri culture is also rich in music and dance. The traditional music of Kashmir, known as Sufiana music, is a blend of Persian and Indian classical music and is characterized by its haunting melodies and devotional lyrics.
+            
+            The traditional dance of Kashmir is known as the Rouf, which is performed by women during festivals and other celebrations. The Rouf is a graceful and elegant dance, characterized by its circular movements and intricate footwork.
+            
+            In conclusion, the Kashmiri language and culture have a rich and complex history, with influences from a variety of sources.
+          </p>
+         
+      </div>
+    </div>
+
+  </div>
+</section>
+ <!-- about section -->
+    
+ <section id="about" class="portfolio section-bg">
+  <div class="container">
+
+    <div class="section-title">
+      <h2 data-aos="fade-in">About</h2>
+      <p style="text-align: justify; line-height: 2;" data-aos="fade-in">This website was built with the aim of promoting the beautiful Kashmiri language and culture, and providing a platform for anyone who is interested in learning more about this unique and fascinating region.
+
+        Kashmiri is a beautiful language with a rich history, and it deserves to be celebrated and preserved. We believe that by making it easier for people to learn the language and understand its culture, we can contribute to its preservation and ensure that it continues to be passed down to future generations.
+        Whether you are a student, a language enthusiast, or simply someone who wants to learn more about Kashmiri language and culture, we hope that you will find our website informative and useful. We are committed to regularly updating and improving our resources, so please check back often for new words, poems, and other features.
+
+        Thank you for visiting our website, and we hope you enjoy learning about Kashmiri language and culture as much as we do!</p>
+    </div>
+
+   
+</section><!-- End About Section -->
+  
+    
+        
+       
+   
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+
+      <div class="container">
+
+        <div class="row  justify-content-center">
+          <div class="col-lg-6">
+           
+            <h4 style="margin-top: 10%; line-height: 2;">This site is designed and mantained by Moin Zargar, Student of IT at NIT Srinagar</h4>
+          </div>
+        </div>
+
+        
+
+        <!-- <div class="social-links">
+          <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        </div> -->
+
+      </div>
+      
+    </div>
+
+    <div class="container footer-bottom">
+      <div class="copyright" style="text-align: center;">
+        &copy; Copyright <strong><span>Moin Zargar</span></strong>. All Rights Reserved
+      </div>
+     
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Vendor JS Files -->
+  
+  <script type = "text/javascript" src = "{{ url_for('static', filename = 'assets/vendor/aos/aos.js') }}" ></script>
+  <script type = "text/javascript" src = "{{ url_for('static', filename = 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}" ></script>
+  <script type = "text/javascript" src = "{{ url_for('static', filename = 'assets/vendor/glightbox/js/glightbox.min.js') }}" ></script>
+  <script type = "text/javascript" src = "{{ url_for('static', filename = 'assets/vendor/isotope-layout/isotope.pkgd.min.js') }}" ></script>
+  <script type = "text/javascript" src = "{{ url_for('static', filename = 'assets/vendor/swiper/swiper-bundle.min.js') }}" ></script>
+
+
+
+  
+  <script type = "text/javascript" src = "{{ url_for('static', filename = 'assets/js/main.js') }}" ></script>
+  <script type = "text/javascript" src = "{{ url_for('static', filename = 'index.js') }}" ></script>
+
+</body>
+
+</html>

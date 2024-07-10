@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel= "stylesheet" type= "text/css" href="{{ url_for('static', filename='contribute.css')}}">
+    <!-- sweet alert-->
+    <title>Contribute</title>
+</head>
+<body>
+  
+  <div id="main" class="container">
+    <div class="d-flex justify-content-center align-items-center row">
+      <div class="col-md-8 col-lg-8">
+         <div class="border">
+          
+            <div class="p-4 bg-primary text-white border-bottom">
+              
+                <h5 style="text-align: center;" id ="heading" style=" margin-bottom: 2%; line-height: 1.5;">Add new word to dictionary</h5>
+                
+             
+            </div>
+          
+        <form id="wordForm" method="POST" action="contribute">
+          <div id="box0" class="words bg-white p-2 border-bottom">
+            
+              <div class="mr-5 d-flex flex-row justify-content-between align-items-center q1">
+                <label for="English Word">English Word (required)</label>
+              </div>
+              <input type="text" id="0" name="EnglishWord" placeholder="Type text here" maxlength="130" required>
+            </div>
+
+              <div id="box1" class="words bg-white p-2 border-bottom">
+                <div class="mr-5 d-flex flex-row justify-content-between align-items-center">
+                  <label for="Kashmiri Meaning">Kashmiri Meaning (required)</label>
+                </div>
+                <input type="text" id="1" name="KashmiriMeaning" placeholder="Type text here" maxlength="130" required>
+              </div>
+              
+              <div id="box2" class="words bg-white p-2 border-bottom">
+                <div class="mr-5 d-flex flex-row justify-content-between align-items-center">
+                  <label for="English Exmaple">English Example (not neccessary)</label>
+                </div>
+                <input type="text" id="2" name="EnglishExample" placeholder="Type text here" maxlength="130">
+              </div>
+
+              <div id="box3" class="words bg-white p-2 border-bottom">
+                <div class="mr-5 d-flex flex-row justify-content-between align-items-center">
+                  <label for="POS">POS (Part of speech) (not neccessary)</label>
+                </div>
+                <input type="text" id="3" name="pos" placeholder="Type text here" maxlength="130">
+              </div>
+              <div style="display: flex; justify-content: center;">
+                <input style="text-align: center;"  id="next-btn"  class="px-5 btn  btn-primary" type="submit" value="Submit">
+              </div>
+    
+            <!-- <span><a id="next-btn" onclick="display()" class="px-5 btn  btn-primary">Next</a></span>        -->
+          </div>
+                   
+     </form>
+   
+         </div>
+        </div>
+    </div>
+    
+  </div>
+  <!-- display message -->
+  <div id="message" style="display: none;" class="result_box">
+    <div class="icon">
+        <i class="fas fa-crown"></i>
+    </div>
+    <div style="line-height: 1.5;" class="complete_text">Thank you for submitting the word. It will be added after admin approval</div>
+    <div class="score_text">
+      
+    </div>
+    <div class="buttons">
+        <a href="{{ url_for('home') }}" class="button restart">Home</a>
+        <a href="{{ url_for('home') }}" class="button quit">Dashboard</a>
+    </div>
+  </div>
+
+<script>
+  // const form = document.getElementById('wordForm');
+  // const contributeUrl = "{{ url_for('contribute') }}"; // URL for the contribute route
+  // const displayUrl = "{{ url_for('display') }}"; // URL for the display route
+
+  // function display() {
+    
+    
+  //   form.action = contributeUrl;
+  //   form.submit();
+  //   document.getElementById("main").style.display="none";
+  //   document.getElementById("message").style.display="block";
+
+  // }
+
+
+</script>
+<script type = "text/javascript" src = "{{ url_for('static', filename = 'contribute.js') }}" ></script>
+
+</body>
+
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible"
+		content="IE=edge">
+	<meta name="viewport"
+		content="width=device-width,
+				initial-scale=1.0">
+	<title>Dashboard</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet"
+		href="style.css">
+	<link rel="stylesheet"
+		href="responsive.css">
+   <!-- jQuery library -->
+   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='admin.css')}}" />
+</head>
+
+<body>
+
+	<!-- for header part -->
+	<header>
+
+		<div class="logosec">
+			<div class="logo"> كٲشر ڈکشنری</div>
+			<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210182541/Untitled-design-(30).png"
+				class="icn menuicn"
+				id="menuicn"
+				alt="menu-icon">
+		</div>
+
+		
+
+		<div class="message">
+			<div class="dp">
+			<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210180014/profile-removebg-preview.png"
+					class="dpicn"
+					alt="dp">
+			</div>
+		</div>
+
+	</header>
+
+	<div class="main-container">
+		<div class="navcontainer">
+			<nav class="nav">
+				<div class="nav-upper-options">
+					<div class="nav-option option1">
+						<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210182148/Untitled-design-(29).png"
+							class="nav-img"
+							alt="dashboard">
+						<h5> Admin Panel</h5>
+					</div>
+
+          <div class="option2 nav-option">
+			        
+                       <a href="{{ url_for('home') }}">
+                        <i class="fa fa-regular fa-home"></i>
+                        <h5 style="display:inline">Home</h5>
+                      </a>
+                      
+					</div>
+
+					<div class="nav-option option5">
+						
+                        <a href="{{ url_for('admin') }}">
+                            <i class="fas fa-chart-bar"></i>
+                            <h5 style="display:inline">Admin</h5>
+                          </a>
+					</div>
+
+					<div class="nav-option option4">
+						
+                        <a href="{{ url_for('contribute') }}">
+                            <i class="fas fa-user-md"></i>
+                            <h5 style="display:inline">Contribute</h5>
+                          </a>
+
+					</div>
+
+					
+
+					<div class="nav-option logout">
+						
+                        <a href="{{ url_for('logout') }}">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <h5 style="display:inline">Logout</h5>
+                          </a>
+						
+					</div>
+
+				</div>
+			</nav>
+		</div>
+
+		<div class="main">
+
+
+			<div class="box-container">
+
+				<div class="box box1">
+					<div class="text">
+						<h2 class="topic">Welcome to Admin Panel</h2>
+						<h2 class="topic">Dear {{username}}</h2>
+					</div>
+
+				</div>
+
+				
+			</div>
+
+			<div class="report-container">
+				<div class="report-header">
+					<h6 class="recent-Articles">Admin Dashboard</h6>
+					
+				</div>
+
+				<div class="report-container">
+					<div class="report-header">
+						<h6 class="recent-Articles">Requests</h6>
+						
+					</div>
+	
+					<div class="report-body">
+						
+				<table id="test-report" class="display">
+				  <thead>
+					<tr class="header">
+					  <th class="header">username</th>
+					  <th class="header">email</th>
+					  <th class="header">title</th>
+					  <th class="header">Kashmiri Meaning</th>
+					  <th class="header">POS</th>
+					  <th class="header">English Example</th>
+					  <th class="header">Approve</th>
+					  <th class="header">Reject</th>
+
+					</tr>
+					
+					
+				  </thead>
+				  
+				  <tbody id="tableContent">
+					{% for item in result %}
+                    <tr class="data">
+						<td class="data cell">{{item[1]}} </td>
+						<td class="data cell">{{item[2]}} </td>
+						<td class="data cell">{{item[3]}} </td>
+						<td class="data cell">{{item[5]}} </td>
+						<td class="data cell">{{item[4]}} </td>
+						<td class="data cell">{{item[6]}} </td>
+						<td class="data"><button type="button" onclick="approve('{{ item[0] }}')" class="btn btn-sm btn-success">Add</button> </td>
+                        <td class="data"><button type="button" onclick="reject('{{ item[0] }}')" class="btn btn-sm btn-danger">Delete</button> </td>
+					  </tr>
+				   {% endfor %}
+				  </tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+
+	
+  
+	
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.2/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.js"></script>
+	
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename = 'admin.js') }}"></script>
+</body>
+</html>

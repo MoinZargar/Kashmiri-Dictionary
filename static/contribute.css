@@ -1,0 +1,176 @@
+body{
+    background-color: #eee;
+}
+
+.border{
+    
+    box-shadow: 0px 0px 10px #888;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    background: linear-gradient(to bottom, #f9f9f9, #eee);
+    
+}
+
+.button{
+    text-align: center !important;
+}
+
+input[type="text"] {
+    width: 100%; 
+    padding: 6px 20px;
+    margin: 24px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 8px; 
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    transition: all 0.3s ease-in-out; 
+    background-color: #f9f9f9; 
+}
+
+/* Define input focus styles */
+input[type="text"]:focus {
+    border: 2px solid #555;
+    box-shadow: 0 0 10px #555; 
+    outline: none;
+}
+
+label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #555;
+}
+h5{
+    font-size: 1.4rem;
+    line-height: 2;
+}
+#Hint-modal{
+    visibility: hidden;
+}
+#hint{
+    text-align: center;
+    color:black;
+}
+li{
+    list-style-type: none; /* removes bullet points */
+    padding: 0; /* removes any default padding */
+   font-size: 1.2rem; /* changes the font size to 1.2 times the default size */
+   line-height: 1.5; /* increases the space between lines of text */
+   color: #777; /* changes the text color to a light gray */
+   text-align: center;
+}
+h4{
+    text-align: center;
+}
+
+
+/* submission message */
+.result_box{
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    max-width: 400px;
+    margin: 0 auto;
+    box-shadow: 0px 0px 10px #888;
+    background-color: #f9f9f9;
+    background: linear-gradient(to bottom, #f9f9f9, #eee);
+    }
+    
+    .result_box .icon{
+      font-size: 100px;
+      color: #007bff;
+      margin-bottom: 10px;
+    }
+    
+    .result_box .complete_text{
+      font-size: 20px;
+      font-weight: 500;
+    }
+    
+    .result_box .score_text span{
+      display: flex;
+      margin: 10px 0;
+      font-size: 18px;
+      font-weight: 500;
+    }
+    
+    .result_box .score_text span p{
+      padding: 0 4px;
+      font-weight: 600;
+    }
+    
+    .result_box .buttons{
+      display: flex;
+      margin: 20px 0;
+    }
+    
+    .button {
+      display: inline-block;
+      margin-right: 80px;
+      margin-left: 80px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+      background-color: #0069d9;
+  }
+  @media only screen and (max-width: 800px) {
+        .container {
+          position: relative;
+          top: 0;
+          left: 0;
+          transform: none;
+        }
+       h5{
+        font-size: 1.2rem;
+       }
+       input[type="text"] {
+        font-size: 14px;
+        padding: 9px 17px; 
+       }
+       label {
+        font-size: 17px; 
+       }
+       .btn {
+        margin-top: 10px !important;
+        font-size: 12px;
+      }
+      }
+
+      @media only screen and (max-width: 320px) {
+        .content{
+          flex-direction: column !important;
+          align-items: flex-start !important;
+        }
+        .btn {
+          margin-top: 10px !important;
+          font-size: 10px;
+        }
+        input[type="text"] {
+            font-size: 12px;
+            padding: 5px 16px;
+        }
+        label {
+            font-size: 15px; 
+        }
+        h5{
+            font-size: 1rem;
+           }
+           h4{
+            font-size: 1rem;
+           }
+      }
