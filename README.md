@@ -28,15 +28,14 @@ To get a local copy up and running, follow these steps:
    cd KashmiriDictionary
 2. Set up the Python environment 
     ```bash
-  
-  python -m venv env
-  env\Scripts\activate
+    python -m venv env
+    env\Scripts\activate
   
 3. Install dependencies
-```bash
+  ```bash
   pip install -r requirements.txt
 4. Run the application:
   ```bash
-   python app.py
+  python app.py
 
 
