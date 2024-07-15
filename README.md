@@ -26,15 +26,16 @@ To get a local copy up and running, follow these steps:
    ```bash
    git clone https://github.com/MoinZargar/Kashmiri-Dictionary.git
    cd KashmiriDictionary
-2. Set up the Python environment and install dependencies:
+2. Set up the Python environment 
     ```bash
-  # Create a virtual environment 
-  python -m venv venv
-  venv\Scripts\activate
-
-  # Install dependencies
+  
+  python -m venv env
+  env\Scripts\activate
+  
+3. Install dependencies
+```bash
   pip install -r requirements.txt
-3. Run the application:
+4. Run the application:
   ```bash
    python app.py
 
