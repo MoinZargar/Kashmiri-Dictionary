@@ -36,7 +36,7 @@ To get a local copy up and running, follow these steps:
     pip install -r requirements.txt
 
 4. Run the application:
-  ```bash
-  python app.py
+    ```bash
+    python app.py
 
 
