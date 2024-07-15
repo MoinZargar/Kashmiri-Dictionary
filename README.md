@@ -32,8 +32,9 @@ To get a local copy up and running, follow these steps:
     env\Scripts\activate
   
 3. Install dependencies
-  ```bash
-  pip install -r requirements.txt
+     ```bash
+    pip install -r requirements.txt
+
 4. Run the application:
   ```bash
   python app.py
