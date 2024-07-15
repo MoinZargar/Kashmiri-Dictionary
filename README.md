@@ -16,7 +16,7 @@ Welcome to the Kashmiri Dictionary project repository! This project aims to crea
 
 - **Frontend**: HTML, CSS, JavaScript
 - **Backend**: Python, Flask
-- **Database**: SQL (SQLite)
+- **Database**: MySQL 
 
 ## Getting Started
 
