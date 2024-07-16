@@ -1,4 +1,4 @@
-# kashmiri-dictionary
+# kashmiri-dictionary website (Full Stack Project)
 https://github.com/user-attachments/assets/6a8869d1-8678-4277-a9fb-57ad9f4707bc
 
 # Kashmiri Dictionary Project
